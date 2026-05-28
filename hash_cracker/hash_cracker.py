@@ -1,14 +1,15 @@
 import hashlib
+from pathlib import Path
 
 # Target hash
 hash_input = input("Enter MD5 hash: ")
 
 # Wordlist file
-wordlist = "/Users/tyy0908/Desktop/Cybersecurity_Portfolio/hash_cracker/wordlist.txt"
+wordlist = Path(__file__).with_name("wordlist.txt")
 
 found = False
 
-with open(wordlist, "r") as file:
+with open(wordlist, "r", encoding="utf-8") as file:
     for word in file:
         word = word.strip()
 
